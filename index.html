@@ -52,17 +52,24 @@
     }
 
     .hero-photo {
-      width: 90%;
-      max-width: 600px;
+      width: 100%;
+      height: auto;
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
       animation: fadeIn 2s ease forwards;
       opacity: 0;
-      margin-bottom: 100px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 100px;
+      object-fit: cover;
+      max-width: 100%;
     }
+
+    @media (min-width: 768px) {
+      .hero-photo {
+        width: 70%;
+      }
+    }
+    
 
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(30px); }
@@ -175,11 +182,15 @@
     /* адрес и показ на карте (ссылка) */
     .address { margin-top: 30px; font-size: 18px; }
     .address strong {
-      font-size: 22px;
-      font-family: 'Great Vibes', cursive;
-      color: var(--accent);
-      display:block;
-      margin-bottom:6px;
+     font-size: 26px;
+     font-family: 'Playfair Display', serif; /* строгий, элегантный шрифт */
+     color: var(--accent);
+     display: block;
+     margin-bottom: 6px;
+     letter-spacing: 1px;
+     font-weight: 600;
+     text-transform: none;
+     text-shadow: 0 0 6px rgba(224, 197, 143, 0.3); /* можно убрать, если не хочешь мягкий блеск */
     }
 
     .location-icon {
@@ -394,18 +405,22 @@
       </div>
 
       <div class="address">
-        <p><strong>ЗАГС Гагаринского района</strong><br>ул. Проспект Октябрьской Революции, д. 8</p>
-        <a href="https://www.google.com/maps?q=44.593809,33.451339&hl=ru" target="_blank" rel="noreferrer">
-          <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C8.69 0 6 2.69 6 6c0 3.54 4.71 10.36 5.39 11.54l.61.85.61-.85C13.29 16.36 18 9.54 18 6c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-          <span class="location-text">Показать на карте</span>
-        </a>
+     <p><strong>ЗАГС Гагаринского района</strong><br>ул. Проспект Октябрьской Революции, д. 8</p>
+     <a href="https://yandex.ru/maps/?pt=33.451339,44.593809&z=17&l=map" target="_blank" rel="noreferrer">
+     <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 0C8.69 0 6 2.69 6 6c0 3.54 4.71 10.36 5.39 11.54l.61.85.61-.85C13.29 16.36 18 9.54 18 6c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+     </svg>
+     <span class="location-text">Показать на карте</span>
+     </a>
 
-        <p><strong>Ресторан "Фрэш"</strong><br>ул. Исторический бульвар, д. 3</p>
-        <a href="https://www.google.com/maps?q=44.599739,33.524336&hl=ru" target="_blank" rel="noreferrer">
-          <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C8.69 0 6 2.69 6 6c0 3.54 4.71 10.36 5.39 11.54l.61.85.61-.85C13.29 16.36 18 9.54 18 6c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-          <span class="location-text">Показать на карте</span>
-        </a>
-      </div>
+     <p><strong>Ресторан "Фрэш"</strong><br>ул. Исторический бульвар, д. 3</p>
+     <a href="https://yandex.ru/maps/?pt=33.524336,44.599739&z=17&l=map" target="_blank" rel="noreferrer">
+     <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 0C8.69 0 6 2.69 6 6c0 3.54 4.71 10.36 5.39 11.54l.61.85.61-.85C13.29 16.36 18 9.54 18 6c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+     </svg>
+     <span class="location-text">Показать на карте</span>
+     </a>
+     </div>
     </div>
     <!-- === /ПРОГРАММА ДНЯ === -->
 
@@ -448,6 +463,10 @@
     <div class="section">
       <h2>АНКЕТА ГОСТЯ</h2>
       <p>Заполните, пожалуйста, форму, чтобы подтвердить своё присутствие.</p>
+      <p class="note">
+        Поскольку в анкете есть вопросы касательно меню и напитков,<br>
+        просим гостей, которые придут в паре, заполнять форму по отдельности.
+      </p>
       <form action="https://formspree.io/f/xkgkweyp" method="POST">
         <label>Ваше имя и фамилия:</label>
         <input type="text" name="name" placeholder="Иван Иванов / Алина Иванова" required />
@@ -497,3 +516,5 @@
   </script>
 </body>
 </html>
+
+
