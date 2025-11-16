@@ -389,24 +389,11 @@
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(224, 197, 143, 0.5);
 }
-    /* === ИСТОРИЯ ЛЮБВИ === */
-.love-story {
-  text-align: center;
-  width: 100%;
-}
-
-.love-story .text {
-  max-width: 780px;
-  margin: 0 auto 25px;
-  line-height: 1.6;
-}
-
-/* Фото ровно по центру как остальные */
-.love-photo {
+  .love-photo {
   display: block;
-  margin: 40px auto 80px auto;
-  width: 70%;
-  max-width: 700px;
+  margin: 40px auto;
+  width: 100%;          /* стало шире */
+  max-width: 780px;     /* такой же размер как другие фото */
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
@@ -420,7 +407,7 @@
   .love-photo {
     width: 100%;
     border-radius: 0;
-    margin: 20px 0 50px 0;
+    margin: 20px auto;
   }
 }
   </style>
@@ -656,6 +643,7 @@
 </script>
 </body>
 </html>
+
 
 
 
