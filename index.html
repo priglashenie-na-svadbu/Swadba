@@ -390,16 +390,16 @@
   box-shadow: 0 0 15px rgba(224, 197, 143, 0.5);
 }
   .love-photo {
-  display: block;
-  margin: 40px auto;
-  width: 100%;          /* стало шире */
-  max-width: 780px;     /* такой же размер как другие фото */
+  width: 70%;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
   animation: fadeIn 2s ease forwards;
   opacity: 0;
+  display: block;
+  margin: 0 auto 100px;
   object-fit: cover;
+  transition: width 0.5s ease;
 }
 
 /* На телефонах во всю ширину */
@@ -407,7 +407,7 @@
   .love-photo {
     width: 100%;
     border-radius: 0;
-    margin: 20px auto;
+    margin-bottom: 60px;
   }
 }
   </style>
@@ -643,6 +643,7 @@
 </script>
 </body>
 </html>
+
 
 
 
